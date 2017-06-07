@@ -4,6 +4,7 @@ edX-sponsored course, MIT 6.00.1x. Learning the basics of computer
 programming in Python and the fundamentals of computation, as well as getting the
 opportunity to implement your own Python functions.
 
+### Week 1
 #### Lecture 1 – Introduction to Python:
 - Knowledge
 - Machines
@@ -19,6 +20,7 @@ opportunity to implement your own Python functions.
 - Control Flow
 - Iteration
 - Guess and Check
+### Week 2
 #### Lecture 3 – Simple Programs:
 - Approximate Solutions
 - Bisection Search
@@ -35,6 +37,7 @@ opportunity to implement your own Python functions.
 - Fibonacci
 - Recursion on non-numerics
 - Files
+### Week 3
 #### Lecture 5 – Tuples and Lists:
 - Tuples
 - Lists
@@ -46,6 +49,7 @@ opportunity to implement your own Python functions.
 - Example with a Dictionary
 - Fibonacci and Dictionaries
 - Global Variables
+### Week 4
 #### Lecture 7 – Debugging:
 - Programming Challenges
 - Classes of Tests
@@ -56,6 +60,7 @@ opportunity to implement your own Python functions.
 - Assertions
 - Exceptions
 - Exception Examples
+### Week 5
 #### Lecture 9 – Classes and Inheritance:
 - Object Oriented Programming
 - Class Instances
@@ -71,6 +76,7 @@ opportunity to implement your own Python functions.
 - Using Inherited Methods
 - Gradebook Example
 - Generators
+### Week 6
 #### Lecture 11 – Computational Complexity:
 - Program Efficiency
 - Big Oh Notation
@@ -83,6 +89,7 @@ opportunity to implement your own Python functions.
 - Bogo and Bubble Sort
 - Selection Sort
 - Merge Sort
+### Week 7
 #### Lecture 13 – Visualization of Data:
 - Visualizing Results
 - Overlapping Displays
