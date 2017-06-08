@@ -11,7 +11,7 @@ Finger Exercise:
     What would the code below do if x were -25 instead of 25?
 """
 
-x = 25
+x = 24
 epsilon = 0.01
 numGuesses = 0
 low = 0.0
