@@ -31,7 +31,7 @@ Since these courses may be the only formal computer science courses many of the 
   - Bisection Search
   - Floats and Fractions
   - Newton-Raphson
-  - #### Lecture 4 – Functions:
+- #### Lecture 4 – Functions:
   - Decomposition and Abstraction
   - Functions and Scope
   - Keyword Arguments
@@ -48,7 +48,7 @@ Since these courses may be the only formal computer science courses many of the 
   - Lists
   - List Operations
   - Mutation, Aliasing, Cloning
-  - #### Lecture 6 – Dictionaries:
+- #### Lecture 6 – Dictionaries:
   - Functions as Objects
   - Dictionaries
   - Example with a Dictionary
@@ -61,7 +61,7 @@ Since these courses may be the only formal computer science courses many of the 
   - Bugs
   - Debugging
   - Debugging Examples
-  - #### Lecture 8 – Assertions and Exceptions
+- #### Lecture 8 – Assertions and Exceptions
   - Assertions
   - Exceptions
   - Exception Examples
@@ -74,7 +74,7 @@ Since these courses may be the only formal computer science courses many of the 
   - Why OOP
   - Hierarchies
   - Your Own Types
-  - #### Lecture 10 – An Extended Example:
+- #### Lecture 10 – An Extended Example:
   - Building a Class
   - Viualizing the Hierarchy
   - Adding another Class
@@ -87,7 +87,7 @@ Since these courses may be the only formal computer science courses many of the 
   - Big Oh Notation
   - Complexity Classes
   - Analyzing Complexity
-  - #### Lecture 12 – Searching and Sorting Algorithms:
+- #### Lecture 12 – Searching and Sorting Algorithms:
   - Indirection
   - Linear Search
   - Bisection Search
