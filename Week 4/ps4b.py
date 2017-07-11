@@ -124,9 +124,57 @@ def playGame(wordList):
 
     wordList: list (string)
     """
-    # TO DO... <-- Remove this comment when you code this function
-    print("playGame not yet implemented.") # <-- Remove this when you code this function
-
+    # Constant values.
+    hand = []
+    
+    # Ask the user to input 'n' or 'r' or 'e'.
+    while True:    
+        gameStatus = input('Enter n to deal a new hand, r to replay the last hand, or e to end game: ')
+    
+        if gameStatus == 'e':
+            break
+    
+        elif gameStatus == 'r' and hand == []:
+            print("You have not played a hand yet. Please play a new hand first!")
+            continue
+    
+        elif (gameStatus == 'n') or (gameStatus == 'r' and hand != []):        
+            while True:
+                player = input('Enter u to have yourself play, c to have the computer play: ')
+        
+                if player == 'u':
+        
+                    if gameStatus == 'n':
+                        masterHand = dealHand(HAND_SIZE)
+                        hand = masterHand.copy()
+                        playHand(hand, wordList, HAND_SIZE)
+                        break
+        
+                    elif gameStatus == 'r':
+                        hand = masterHand.copy()
+                        playHand(hand, wordList, HAND_SIZE)
+                        break
+        
+                elif player == 'c':
+           
+                    if gameStatus == 'n':
+                        masterHand = dealHand(HAND_SIZE)
+                        hand = masterHand.copy()
+                        compPlayHand(hand, wordList, HAND_SIZE)  
+                        break
+           
+                    elif gameStatus == 'r':
+                        hand = masterHand.copy()
+                        compPlayHand(hand, wordList, HAND_SIZE)
+                        break
+        
+                else:
+                    print('Invalid command.')
+                    continue
+    
+        else:
+            print('Invalid command.')
+            continue
         
 #
 # Build data structures used for entire session and play game
