@@ -80,13 +80,13 @@ class Message(object):
         return self.message_text
 
     ### DO NOT MODIFY THIS METHOD ###
-    #def get_valid_words(self):
+    def get_valid_words(self):
         '''
         Used to safely access a copy of self.valid_words outside of the class
         
         Returns: a COPY of self.valid_words
         '''
-        #return self.valid_words[:]
+        return self.valid_words[:]
         
     def build_shift_dict(self, shift):
         '''
@@ -102,42 +102,17 @@ class Message(object):
         Returns: a dictionary mapping a letter (string) to 
                  another letter (string). 
         '''
-        lowerDict = {'a':1, 'b':2, 'c':3, 'd':4, 'e':5, 'f':6, 'g':7, 'h':8, 'i':9, 
-                     'j':10, 'k':11, 'l':12, 'm':13, 'n':14, 'o':15, 'p':16, 'q':17, 
-                     'r':18, 's':19, 't':20, 'u':21, 'v':22, 'w':23, 'x':24, 'y':25, 
-                     'z':26}
-        upperDict = {'A':1, 'B':2, 'C':3, 'D':4, 'E':5, 'F':6, 'G':7, 'H':8, 'I':9, 
-                     'J':10, 'K':11, 'L':12, 'M':13, 'N':14, 'O':15, 'P':16, 'Q':17, 
-                     'R':18, 'S':19, 'T':20, 'U':21, 'V':22, 'W':23, 'X':24, 'Y':25, 'Z':26}
-        inv_lowerDict = {v: k for k, v in lowerDict.items()}
-        inv_upperDict = {v: k for k, v in upperDict.items()}
-        newLetterDict = {}
+        letters = string.ascii_lowercase
+        letters_shifted = (letters * 2)[shift : shift + 26]
+        letters = letters + letters.upper()
+        letters_shifted = letters_shifted + letters_shifted.upper()
         
-        for letter in lowerDict:
-            k = letter
-            v_Value = lowerDict[letter] + shift
-            
-            while v_Value > 26:
-                v_Value -= 26
-            
-            if v_Value in inv_lowerDict:
-                v = inv_lowerDict[v_Value]
-                
-            newLetterDict[k] = v
-            
-        for letter in upperDict:
-            k = letter
-            v_Value = upperDict[letter] + shift
-            
-            while v_Value > 26:
-                v_Value -= 26
-            
-            if v_Value in inv_upperDict:
-                v = inv_upperDict[v_Value]
-                
-            newLetterDict[k] = v
-            
-        return newLetterDict
+        shift_dictionary = {}
+
+        for i in range(52):
+            shift_dictionary[letters[i]] = letters_shifted[i]
+
+        return shift_dictionary
         
 
     def apply_shift(self, shift):
@@ -263,14 +238,59 @@ class CiphertextMessage(Message):
         Returns: a tuple of the best shift value used to decrypt the message
         and the decrypted message text using that shift value
         '''
-        pass #delete this line and replace with your code here
+        best_shift = 0
+        best_real_words = 0
+        best_msg = ""
 
+        for s in range(26):
+            decrypted_text = self.apply_shift(s)
+            words = decrypted_text.split()
+            real_words = sum([is_word(self.get_valid_words(), w) for w in words])
+            if real_words > best_real_words:
+                best_shift = s
+                best_real_words = real_words
+                best_msg = decrypted_text
+
+        return (best_shift, best_msg)
+        
 ##Example test case (PlaintextMessage)
-plaintext = PlaintextMessage('hello', 2)
-print('Expected Output: jgnnq')
-print('Actual Output:', plaintext.get_message_text_encrypted())
+#plaintext = PlaintextMessage('hello', 2)
+#print('Expected Output: jgnnq')
+#print('Actual Output:', plaintext.get_message_text_encrypted())
     
 ##Example test case (CiphertextMessage)
-ciphertext = CiphertextMessage('jgnnq')
-print('Expected Output:', (24, 'hello'))
-print('Actual Output:', ciphertext.decrypt_message())
+#ciphertext = CiphertextMessage('jgnnq')
+#print('Expected Output:', (24, 'hello'))
+#print('Actual Output:', ciphertext.decrypt_message())
+
+story = get_story_string()
+cipherstory = CiphertextMessage(story)
+print(cipherstory.decrypt_message())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
